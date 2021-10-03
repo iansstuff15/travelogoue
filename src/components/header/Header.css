@@ -1,0 +1,25 @@
+  .Link{
+
+      display: inline-block;
+      position: relative;
+      right: 5vw;
+      color: black;
+      margin: 10px;
+    }
+
+  .Header{
+    justify-content: center;
+
+    text-align: end;
+    position: fixed;
+    width: 100vw;
+    z-index: 2;
+    background-color: white;
+    
+  }
+.applogo{
+  height: 40px;
+  margin-top: 10px;
+  position: relative;
+  margin-right: 60vw;
+}

@@ -1,0 +1,10 @@
+.content{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.cta{
+    position: relative;
+    display: flex;
+    left: 55%;
+   
+}

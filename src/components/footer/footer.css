@@ -1,0 +1,20 @@
+.Footer{
+    background-color: #6F6A6A;
+    padding: 5% 5%;
+}
+.footerHeaderText{
+    color: #464141;
+    margin: 10px 0;
+    font-size: 3em;
+}
+.footerContentText{
+    color: #BDBDBD;
+    margin: 7px 7vw;
+}
+.names{
+    margin: 10px 0;
+}
+.footerTitle{
+    font-size: 1.5em;
+    color: #1E1E1E;
+}

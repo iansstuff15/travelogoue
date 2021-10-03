@@ -1,0 +1,14 @@
+.form{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 40px 50px; 
+    grid-template-areas: 
+      ". ."
+      ". ."; 
+  
+
+}
+.content{
+    margin: 10vh ;
+}

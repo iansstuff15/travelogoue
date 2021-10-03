@@ -1,0 +1,39 @@
+ .hello{
+   
+       
+
+     
+        display: inline-block;
+    
+        color: black;
+    
+      
+    }
+
+.container{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    background-color: #FFF2E6;
+    border-radius: 15px;
+    width: 260px;
+    padding: 20px;
+    justify-content: flex-end;
+    margin-right: 40px;
+
+}
+
+.logo{
+    color: #FF6600;
+    height: 80px;
+    position:relative;
+   
+    left: 100%;
+
+}
+.name{
+    font-size: 1.1em;
+}
+.subname{
+    color: #FF6600;
+    font-size: 1.5em;
+}
