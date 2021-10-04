@@ -17,21 +17,6 @@ import SignIn from './pages/signin.jsx/signin';
 import Booking from './pages/BookDestination/BookDestination';
 
 class App extends React.Component{
-  constructor(props) {
-  super(props)
-    this.state = {
-      data: []
-            }
-    }
-    componentDidMount(){
-      //request to output sql entries
-      axios.get('http://localhost/db/list.php').then(res => 
-      {
-      
-      this.setState({data: res.data});
-         }); 
-      
-      }
     render() {
       return (
         <div className="viewport">
