@@ -46,7 +46,7 @@ class App extends React.Component{
                 
               <Route path = "/signin" component = {SignIn} exact/>
                
-              <Route path = "/bookings"" component = {Booking} exact/>
+              <Route path = "/bookings" component = {Booking} exact/>
           </Switch>
         <Footer/>
         </Router>
