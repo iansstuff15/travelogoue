@@ -14,6 +14,7 @@ import React from 'react';
 import Footer from './components/footer/footer';
 import SignUp from './pages/signup/signup';
 import SignIn from './pages/signin.jsx/signin';
+import Booking from './pages/BookDestination/BookDestination';
 
 class App extends React.Component{
   constructor(props) {
@@ -41,12 +42,11 @@ class App extends React.Component{
               <Route path = "/" exact>
                   <Home/>
               </Route>
-              <Route path = "/signup" exact>
-                  <SignUp/>
-              </Route>
-              <Route path = "/signin" exact>
-                  <SignIn/>
-              </Route>
+              <Route path = "/signup" component = {SignUp} exact/>
+                
+              <Route path = "/signin" component = {SignIn} exact/>
+               
+              <Route path = "/bookings"" component = {Booking} exact/>
           </Switch>
         <Footer/>
         </Router>
