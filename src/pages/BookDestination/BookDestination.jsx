@@ -12,14 +12,14 @@ const BookingDestination = () => (
         <div className = "subtravelForm">
             
             <form>
-            <p style={{fontSize: "24px"}}>Where exactly do you</p>
-            <p style={{fontSize: "72px", marginBottom: "20px"}}>Wanna go?</p>
-            <TextF name = "Where are you going?"/>
+            <p style={{fontSize: "24px",}}>Where exactly do you</p>
+            <p style={{fontSize: '72px', marginBottom: "20px"}}>Wanna go?</p>
+            <TextF style = {{marginRight: "10px"}} name = "Where are you going?"/>
             <TextF name = "Where are you gonna come from?"/>
             <p style={{fontSize: "24px",marginTop: "25px"}}>What schedule do you</p>
             <p style={{fontSize: "72px" , marginBottom: "20px"}}>Wanna prefer?</p>
-            <TextF name = "Is it a one way trip?"/>
-            <TextF name = "Whn are you going?"/>
+            <TextF style = {{marginRight: "10px"}}  name = "Is it a one way trip?"/>
+            <TextF name = "When are you going?"/>
             
                 <div style={{marginTop: "20px", marginLeft: "450px"}}>
                     <CustomButton Text = "Continue"/>
