@@ -1,0 +1,14 @@
+.subtravelForm{
+    display: flex;
+    flex-direction:row;
+    align-content: flex-end;
+    justify-content: space-between;
+
+}
+
+.travelForm{
+    padding: 5px 100px 50px 50px;
+    margin: 30px;
+    width: 40%;
+    float:left;
+}
