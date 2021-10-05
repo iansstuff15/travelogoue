@@ -20,7 +20,7 @@ const SignUp = () => (
         <TextField id="filled-basic" label="Last Name" variant="filled" required  color="warning"/>
         <TextField id="filled-basic" label="Email" variant="filled" type="email" required color="warning"/>
         <TextField id="filled-basic" label="Password" variant="filled" type="password" required color="warning"/>
-        <CustomButton Text = "SIGN UP"/>
+        <CustomButton Type = "submit" Text = "SIGN UP"/>
         </form>
        
     </div>
