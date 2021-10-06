@@ -14,7 +14,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $contact_num=$_POST['contact_num'];
 
-$stmt = $db->prepare("INSERT INTO users (first_name, last_name, email, password, contact_num) VALUES (?, ?, ?, ?, ?)");
+$stmt = $db->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
 $result = $stmt->execute([$fname, $lname, $email, $password, $contact_num]);
 
 if($result){
