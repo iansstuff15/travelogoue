@@ -27,55 +27,6 @@ const SignIn = () => (
     </>
 )
 
-function signin(){
-    const initialState = {
-        userInfo:{
-            email:'',
-            password:'',
-        },
-
-    }
-    const [state,setState] = useState(initialState);
-    signin = async (user) => {
-
-        // send request
-        const signin = await Axios.post('list.php',{
-            email:user.email,
-            password:user.password,
-        });
-
-        return signin.data;
-    }
-    //when submit is pressed on login
-    const submitForm = async (event) => {
-        event.preventDefault();
-        const data = await signin(state.userInfo);
-        if(data.success){
-            setState({
-                ...initialState,
-                successMsg:data.message,
-            });
-        }
-        else{
-            setState({
-                ...state,
-                successMsg:'',
-                errorMsg:data.message
-            });
-        }
-    }
-    //change input value
-    const onChangeValue = (e) => {
-        setState({
-            ...state,
-            userInfo:{
-                ...state.userInfo,
-                [e.target.name]:e.target.value
-            }
-        });
-    }
-
-}
 
 
 export default SignIn
