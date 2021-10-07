@@ -14,6 +14,7 @@ import Footer from './components/footer/footer';
 import SignUp from './pages/signup/signup';
 import SignIn from './pages/signin.jsx/signin';
 import Booking from './pages/BookDestination/BookDestination';
+import List from './pages/ListDestination/ListDestination';
 
 class App extends React.Component{
     render() {
@@ -31,6 +32,8 @@ class App extends React.Component{
               <Route path = "/signin" component = {SignIn} exact/>
                
               <Route path = "/bookings" component = {Booking} exact/>
+                
+              <Route path ="/list" component = {List} exact />
           </Switch>
         <Footer/>
         </Router>
