@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-
+import {useHistory} from 'react-router-dom';
 import Title from '../../components/title/title';
 import buildPic from '../../assets/Building.png';
 import TextF from '../../components/booking/TextFieldCus';
 import CustomButton from '../../components/customButton/customButton';
 import './BookDestination.css';
-
+//import { Link } from 'react-router-dom';
 
 
 
 
 const BookingDestination = () => {
+    const history = useHistory();
     const [step, setStep] = useState(1);
     const [tolocation, setTolocation] = useState("");
     const [fromlocation, setFromlocation] = useState("");
@@ -21,6 +22,8 @@ const BookingDestination = () => {
     const [howmany, setHowmany] = useState(0);
     const [whatas, setWhatas] = useState("");
 
+
+
     const gonextStep = (e) => {
         e.preventDefault();
         setStep(2);
@@ -28,11 +31,14 @@ const BookingDestination = () => {
  
     }
     
+
     const handleSubmit = e => {
+        e.preventDefault();
         setStep(1);
+        history.push('/list', {tolocation, fromlocation, oneway, whengo, who, yesspecial, howmany, whatas})
 
     }
-    console.log(tolocation);
+
 
     switch(step){
         case 1:
@@ -83,7 +89,9 @@ const BookingDestination = () => {
                             <TextF dvalue = {whatas} dvaluef = {setWhatas} name = "What assistance do they require?"/>
                         
                             <div style={{marginTop: "20px", marginLeft: "450px"}}>
+                                
                                 <CustomButton Type = "submit" Text = "Continue"/>
+                                
                             </div>
                         </form>        
                         
