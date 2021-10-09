@@ -29,7 +29,9 @@ class SignIn extends Component {
         }
       }
 
-
+      backhome(){
+        this.props.history.push('/');
+      }
        onChangeEmail(e){
         this.setState({
           email:e.target.value
@@ -49,6 +51,7 @@ class SignIn extends Component {
         Axios.post('login.php',obj)
       .then(res=> {console.log(res.data)
         localStorage.setItem('user',JSON.stringify(obj))
+        this.backhome()
       }
       )
       .catch(error => {
@@ -79,9 +82,5 @@ return(
 }
 }
 
-function Backhome(){
-  let history = useHistory();
-  return  history.push("/");
-}
 
-export default SignIn
+export default  withRouter(SignIn)
