@@ -14,7 +14,9 @@ import Footer from './components/footer/footer';
 import SignUp from './pages/signup/signup';
 import SignIn from './pages/signin.jsx/signin';
 import Booking from './pages/BookDestination/BookDestination';
-import List from './pages/ListDestination/ListDestination';
+import BookFlightsOne from './pages/BookFlights/BookFlightsOne';
+import BookFlightsTwo from './pages/BookFlights/BookFlightsTwo';
+import Flights from './pages/Flights/flights';
 
 class App extends React.Component{
     render() {
@@ -30,10 +32,13 @@ class App extends React.Component{
               <Route path = "/signup" component = {SignUp} exact/>
                 
               <Route path = "/signin" component = {SignIn} exact/>
-               
+              <Route path = "/flights" component = {Flights} exact/>
               <Route path = "/bookings" component = {Booking} exact/>
-                
-              <Route path ="/list" component = {List} exact />
+              <form>
+              <Route path = "/book-flights-page-one" component = {BookFlightsOne} exact/>
+              <Route path = "/book-flights-page-two" component = {BookFlightsTwo} exact/>
+              </form>  
+             
           </Switch>
         <Footer/>
         </Router>

@@ -10,6 +10,8 @@ import PopularDestinations from '../../components/popular-destinations/popular-d
 
 import umbrella from '../../assets/sun-umbrella.svg'
 import plane from '../../assets/plane.svg'
+import BookHotel from '../BookHotel/BookHotel';
+
 
 const Home = () => (
     <>
@@ -19,10 +21,10 @@ const Home = () => (
        
        <div className = "content">
             <span className="cta">
-                
+          
             <NavButton link = "/Destinations" name="BOOK" subname="FLIGHTS" alt = "Holiday logo" url={plane} />
             <NavButton link = "/Destinations" name="GO OUT ON" subname="HOLIDAYS" alt = "Holiday logo" url={umbrella} />
-          
+
             </span>
            <Title title="OUR MOST" subtitle="POPULAR DESTINATIONS"/>
            <PopularDestinations/>

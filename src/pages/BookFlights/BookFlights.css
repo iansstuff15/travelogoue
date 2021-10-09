@@ -1,0 +1,36 @@
+.form{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      " "
+      ". ."
+      " "
+      ". ."; 
+  
+
+}
+.content{
+    margin: 10vh ;
+}
+
+.half{
+  
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          ". ."; 
+      
+}
+
+.image{
+    width: 50vw;
+    height: 100%;
+}
+
+.input{
+    margin:20px;
+}

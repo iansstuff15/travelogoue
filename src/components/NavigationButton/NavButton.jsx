@@ -15,7 +15,6 @@ const NavButton = ({name,subname,link,url,alt}) => (
                         </p>
                         <p className="subname">
                         {subname}
-                       
                         </p>
                        
                         </div>
