@@ -17,7 +17,7 @@ import Booking from './pages/BookDestination/BookDestination';
 import BookFlightsOne from './pages/BookFlights/BookFlightsOne';
 import BookFlightsTwo from './pages/BookFlights/BookFlightsTwo';
 import Flights from './pages/Flights/flights';
-
+import receipt from './pages/signin.jsx/receipt';
 class App extends React.Component{
     render() {
       return (
@@ -30,7 +30,7 @@ class App extends React.Component{
                   <Home/>
               </Route>
               <Route path = "/signup" component = {SignUp} exact/>
-                
+              <Route path = "/receipt" component = {receipt} exact/>
               <Route path = "/signin" component = {SignIn} exact/>
               <Route path = "/flights" component = {Flights} exact/>
               <Route path = "/bookings" component = {Booking} exact/>
