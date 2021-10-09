@@ -28,6 +28,9 @@ function Header(){
     function signup() {
         history.push("/signup");
       }
+    function receipt() {
+        history.push("/receipt");
+    }
       return(
     <div className="Header">
         <Link to="/">
@@ -82,7 +85,7 @@ function Header(){
           'aria-labelledby': 'basic-button',
         }}
       > 
-        <MenuItem onClick={signin}>Receipts</MenuItem>
+        <MenuItem onClick={receipt}>Receipts</MenuItem>
         <MenuItem onClick={signout}>Sign Out</MenuItem>
       </Menu>
     </div>
