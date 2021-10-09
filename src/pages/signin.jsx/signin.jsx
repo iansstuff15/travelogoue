@@ -2,10 +2,13 @@ import React , {useState,Component} from 'react';
 import Title from '../../components/title/title';
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
+import Navigation from '../../components/Navigation/Navigation';
 import Button from '@mui/material/Button';
-
+import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import send from '../../assets/send.svg'
 import './signin.css'
+import Header from '../../components/header/Header';
 import CustomButton from '../../components/customButton/customButton';
 import { borderRadius } from '@mui/system';
 import { render } from '@testing-library/react';
@@ -19,16 +22,14 @@ class SignIn extends Component {
         this.onChangeEmail= this.onChangeEmail.bind(this);
         this.onChangePassword= this.onChangePassword.bind(this);
         this.submitForm = this.submitForm.bind(this);
-       
         this.state ={
           email:'',
           password:'',
-          data: []
        
         }
       }
-       
-     
+
+
        onChangeEmail(e){
         this.setState({
           email:e.target.value
@@ -46,12 +47,13 @@ class SignIn extends Component {
           password:this.state.password,
         };
         Axios.post('login.php',obj)
-       
-      .then(res=> console.log(res.data))
+      .then(res=> {console.log(res.data)
+        localStorage.setItem('user',JSON.stringify(obj))
+      }
+      )
       .catch(error => {
         console.log(error.response)
     });
-    console.log(this.email);
     this.setState({
       email:'',
       password:'',
@@ -77,6 +79,9 @@ return(
 }
 }
 
-
+function Backhome(){
+  let history = useHistory();
+  return  history.push("/");
+}
 
 export default SignIn
