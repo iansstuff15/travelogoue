@@ -35,7 +35,7 @@ const BookingDestination = () => {
     const handleSubmit = e => {
         e.preventDefault();
         setStep(1);
-        history.push('/list', {tolocation, fromlocation, oneway, whengo, who, yesspecial, howmany, whatas})
+        history.push('/list', {tolocation})
 
     }
 

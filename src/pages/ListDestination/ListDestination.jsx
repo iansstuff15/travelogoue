@@ -1,5 +1,5 @@
 import React from 'react';
-//import {useLocation} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 
 import './ListDestination.css';
 import Title from '../../components/title/title';
@@ -10,10 +10,26 @@ import bVillapic from '../../assets/britain_villa.jpeg';
 import jSpapic from '../../assets/japan_spa.jpeg';
 import buildPic from '../../assets/Building.png'
 const ListDestination = () => {
-    //const location = useLocation();
-    //{location.state.update}
+    const location = useLocation();
+    const searchLocationdata = location.state.tolocation;
+    const searchLocation = () =>{
+        switch(searchLocationdata){
+            case 'Philippines': return <ResortList url = {buildPic} alt = {buildPic} name = "Manila Hotel" country = "Philippines" price = "$400" original_price ="$800"/>
+            case 'Spain': return <ResortList url = {sResortpic} alt = {sResortpic} name = "Spanish Resort" country = "Spain" price = "$500" original_price ="$1000"/>
+            case 'UAE': return <ResortList url = {bVillapic} alt = {bVillapic} name = "Britain Villia" country = "UAE" price = "$800" original_price ="$1200"/>
+            case 'Japan': return <ResortList url = {jSpapic} alt = {jSpapic} name = "Japan Spa" country = "Japan" price = "$500" original_price ="$900"/>
+            default:
+                return(
+                    <>
+                    <ResortList url = {buildPic} alt = {buildPic} name = "Manila Hotel" country = "Philippines" price = "$400" original_price ="$800"/>
+                    <ResortList url = {sResortpic} alt = {sResortpic} name = "Spanish Resort" country = "Spain" price = "$500" original_price ="$1000"/>
+                    <ResortList url = {bVillapic} alt = {bVillapic} name = "Britain Villia" country = "UAE" price = "$800" original_price ="$1200"/>
+                    <ResortList url = {jSpapic} alt = {jSpapic} name = "Japan Spa" country = "Japan" price = "$500" original_price ="$900"/>
+                    </>
+                )
+        }
+    }
     return(
-
         <>
         <div className="viewport">
             <div className ="listContainer">
@@ -25,11 +41,9 @@ const ListDestination = () => {
                     <p className ="filterCustom">Type</p>
                     <p className ="filterCustom">Price</p>
                 </div>
+
                 <div className ="listResort">
-                    <ResortList url = {buildPic} alt = {buildPic} name = "Manila Hotel" country = "Philippines" price = "$400" original_price ="$800"/>
-                    <ResortList url = {sResortpic} alt = {sResortpic} name = "Spanish Resort" country = "Spain" price = "$500" original_price ="$1000"/>
-                    <ResortList url = {bVillapic} alt = {bVillapic} name = "Britain Villia" country = "UAE" price = "$800" original_price ="$1200"/>
-                    <ResortList url = {jSpapic} alt = {jSpapic} name = "Japan Spa" country = "Japan" price = "$500" original_price ="$900"/>
+                    {searchLocation()}
                 </div>
             </div>
         </div>
