@@ -18,7 +18,9 @@ function Header(){
     setAnchorEl(null);
   };
   function signout(){
+    history.push("/");
     localStorage.removeItem('user');
+    localStorage.removeItem('receipt');
     handleClose();
   }
   
