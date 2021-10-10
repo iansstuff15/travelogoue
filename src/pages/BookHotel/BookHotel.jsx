@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import './BookHotel.css'
 import buildPic from '../../assets/Building.png';
 import { useState,useEffect } from 'react';
@@ -10,8 +11,9 @@ import planePic from '../../assets/X-1.svg';
 import utensilPic from '../../assets/mono-krecipes.svg';
 import pinpointPic from '../../assets/MapMarker.svg';
 import Reviewcomponent from '../../components/review/review';
-
+import Axios from 'axios'
 const BookHotel = () => {
+    let history = useHistory();
     const location = useLocation();
     const title = location.state.name;
     const price = location.state.price;
@@ -45,6 +47,32 @@ const BookHotel = () => {
 
     }, [axios, title])
 
+    const updateloc=()=>{
+        const receipt={ 
+        email:JSON.parse(localStorage.getItem("user"))['email'],
+         flight_num:Math.floor(Math.random() * 999), 
+         passenger_name : JSON.parse(localStorage.getItem("rp1"))['who'],
+         fr_location : JSON.parse(localStorage.getItem("rp1"))['fromlocation'],
+         to_location : JSON.parse(localStorage.getItem("rp1"))['tolocation'],
+         classtype:Math.floor(Math.random() * 3),
+         flight_date : JSON.parse(localStorage.getItem("rp1"))['whengodate'],
+         flight_time : JSON.parse(localStorage.getItem("rp1"))['whengotime'],
+         gate_num:Math.floor(Math.random() * 999),
+         board_time:"04:30:00",
+         resort_name:title,
+         
+        }
+    Axios.post('http://localhost/db/createreceipt.php',receipt)
+    .then(res=> console.log(res.data),
+    localStorage.removeItem('rp1'),
+       )
+    .catch(error => {
+      console.log(error.response)
+  });
+  history.push('/')   
+
+    }
+
     return(
     <>
         <div><img style = {{width: "100%", height: "30em"}} src = {buildPic} alt = "buildpic"/></div>
@@ -73,7 +101,7 @@ const BookHotel = () => {
                             </div>
                                 <div className="availabilityComponent1">
                                     <img className = "iconImages" src={moonPic} alt={moonPic}/>
-                                    <p>Thu 11 Aug 2022 9 nights</p>
+                                    <p>9 nights</p>
                             </div>
 
                         </div>
@@ -103,7 +131,7 @@ const BookHotel = () => {
                                     <p style={{fontSize:"48px", marginBottom: "-10px"}}>{price}</p>
                                     <p style ={{alignSelf:"flex-end", fontSize:"32px"}}>from {original_price}</p>
                                 </div>
-                                <input type="button" className="bookButton1" value="BOOK HERE"/>
+                                <input type="button" className="bookButton1" value="BOOK HERE" onClick={updateloc}/>
                             </div>
                 </div>
 
