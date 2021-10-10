@@ -13,9 +13,6 @@ $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 if($result){
-    echo json_encode([
-        'code' => '200'
-    ]);
     echo json_encode($result);
 } else{
     echo json_encode([
