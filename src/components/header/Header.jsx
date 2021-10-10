@@ -47,6 +47,13 @@ function Header(){
         <div>
       
       <Button
+      sx={{
+         bgcolor: 'grey.200',
+          color: 'black',
+        position: 'absolute',
+        top: 27,
+        right: '29%',
+      }}
         aria-controls="basic-menu"
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
@@ -72,6 +79,13 @@ function Header(){
         <div>
       
       <Button
+       sx={{
+        bgcolor: 'grey.200',
+         color: 'black',
+       position: 'absolute',
+       top: 27,
+       right: '29%',
+     }}
         aria-controls="basic-menu"
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
