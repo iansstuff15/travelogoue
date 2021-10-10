@@ -1,0 +1,25 @@
+.flight-container{
+    padding: 40px;
+    box-shadow: 1px 8px 21px 4px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 8px 21px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 8px 21px 4px rgba(0,0,0,0.75);
+    width: 25vw;
+    border-radius: 25px;
+    margin: 5%;
+ 
+}
+
+.gray-container{
+    background-color: #d6d6d6;
+    border-radius: 25px;
+    margin: 30px 0;
+    padding: 20px;
+}
+.price{
+    background-color: coral;
+    border-radius: 25px;
+    padding: 20px;
+    font-size: 2em;
+    text-align: right;
+    cursor: pointer;
+}

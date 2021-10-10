@@ -15,7 +15,7 @@ import SignUp from './pages/signup/signup';
 import SignIn from './pages/signin.jsx/signin';
 import Booking from './pages/BookDestination/BookDestination';
 import BookFlightsOne from './pages/BookFlights/BookFlightsOne';
-import BookFlightsTwo from './pages/BookFlights/BookFlightsTwo';
+
 import Flights from './pages/Flights/flights';
 import receipt from './pages/signin.jsx/receipt';
 class App extends React.Component{
@@ -36,7 +36,7 @@ class App extends React.Component{
               <Route path = "/bookings" component = {Booking} exact/>
               <form>
               <Route path = "/book-flights-page-one" component = {BookFlightsOne} exact/>
-              <Route path = "/book-flights-page-two" component = {BookFlightsTwo} exact/>
+          
               </form>  
              
           </Switch>
