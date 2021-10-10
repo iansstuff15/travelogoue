@@ -87,7 +87,7 @@ return(
                   <td>{getreceipt()['passenger_name']}</td>
                   <td>{getreceipt()['fr_location']}</td>
                   <td>{getreceipt()['to_location']}</td>
-                  <td>{getreceipt()['class']}</td>
+                  <td>{getreceipt()['classtype']}</td>
                   <td>{getreceipt()['flight_date']}</td>
                   <td>{getreceipt()['flight_time']}</td>
                   <td>{getreceipt()['gate_num']}</td>
