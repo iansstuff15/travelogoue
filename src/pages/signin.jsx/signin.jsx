@@ -4,7 +4,7 @@ import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import Navigation from '../../components/Navigation/Navigation';
 import Button from '@mui/material/Button';
-import { useHistory } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import send from '../../assets/send.svg'
 import './signin.css'
@@ -12,8 +12,6 @@ import Header from '../../components/header/Header';
 import CustomButton from '../../components/customButton/customButton';
 import { borderRadius } from '@mui/system';
 import { render } from '@testing-library/react';
-
-import { withRouter } from 'react-router';
 const Axios = axios.create({
     baseURL: 'http://localhost/db/',
 });
@@ -30,10 +28,10 @@ class SignIn extends Component {
        
         }
       }
-
       backhome(){
         this.props.history.push('/');
       }
+
        onChangeEmail(e){
         this.setState({
           email:e.target.value
@@ -85,4 +83,5 @@ return(
 }
 
 
-export default  withRouter(SignIn)
+
+export default withRouter(SignIn)
