@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {useHistory} from 'react-react-dom';
 import Title from '../../components/title/title';
 import buildPic from '../../assets/Building.png';
 import TextF from '../../components/booking/TextFieldCus';
@@ -9,7 +8,7 @@ import '../BookDestination/BookDestination.css';
 
 
 const BookFlightsOne = () => {
-    const history = useHistory();
+
     const [step, setStep] = useState(1);
     const [tolocation, setTolocation] = useState("");
     const [fromlocation, setFromlocation] = useState("");
@@ -32,7 +31,6 @@ const BookFlightsOne = () => {
     const handleSubmit = e => {
         e.preventDefault();
         setStep(1);
-        history.push('/flights'}
 
     }
 
