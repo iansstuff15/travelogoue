@@ -15,6 +15,7 @@ const ListComponent = ({name, country, price, original_price, alt, url}) => {
         history.push('/holiday', {name, country, price, original_price})
     }
 
+
     return(
 
         <>
@@ -35,7 +36,7 @@ const ListComponent = ({name, country, price, original_price, alt, url}) => {
                                 </div>
                                 <div className="availabilityComponent">
                                     <img className = "iconImages" src={moonPic} alt={moonPic}/>
-                                    <p>Thu 11 Aug 2022 9 nights</p>
+                                    <p>9 nights</p>
                                 </div>
 
                             </div>
