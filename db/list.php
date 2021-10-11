@@ -1,8 +1,8 @@
 <?php
 /*To Get All Items in the Table (list.php).*/
 header('Content-Type: application/json');
-header("Access-Control-Allow-Origin:*");
-
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
 include("db.php");
 
 $stmt = $db->prepare("SELECT * FROM users");
