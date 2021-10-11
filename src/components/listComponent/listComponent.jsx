@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {useHistory} from 'react-router-dom';
 import './listComponent.css';
 import moonPic from '../../assets/moon.svg';
 import bedPic from '../../assets/double-bed.svg';
@@ -9,6 +9,11 @@ import pinpointPic from '../../assets/MapMarker.svg';
 
 
 const ListComponent = ({name, country, price, original_price, alt, url}) => {
+    const history = useHistory();
+
+    const goToLink = () => {
+        history.push('/holiday', {name, country, price, original_price})
+    }
 
     return(
 
@@ -58,7 +63,7 @@ const ListComponent = ({name, country, price, original_price, alt, url}) => {
                                 <p style={{fontSize:"28px", marginBottom: "-10px"}}>{price}</p>
                                 <p style ={{alignSelf:"flex-end", fontSize:"10px"}}>from {original_price}</p>
                             </div>
-                            <input type="button" className="bookButton" value="BOOK HERE"/>
+                            <input type="button" className="bookButton" value="BOOK HERE" onClick = {goToLink}/>
                         </div>
                     </div>
                 </div>
