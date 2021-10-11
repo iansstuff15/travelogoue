@@ -15,6 +15,8 @@ import SignUp from './pages/signup/signup';
 import SignIn from './pages/signin.jsx/signin';
 import Booking from './pages/BookDestination/BookDestination';
 import BookFlightsOne from './pages/BookFlights/BookFlightsOne';
+import List from './pages/ListDestination/ListDestination';
+import BookHotel from './pages/BookHotel/BookHotel';
 
 import Flights from './pages/Flights/flights';
 import receipt from './pages/signin.jsx/receipt';
@@ -34,10 +36,10 @@ class App extends React.Component{
               <Route path = "/signin" component = {SignIn} exact/>
               <Route path = "/flights" component = {Flights} exact/>
               <Route path = "/bookings" component = {Booking} exact/>
-              <form>
               <Route path = "/book-flights-page-one" component = {BookFlightsOne} exact/>
-          
-              </form>  
+              <Route path = "/holiday" component = {BookHotel} exact/>
+              <Route path = "/list" component = {List} exact/>
+
              
           </Switch>
         <Footer/>
