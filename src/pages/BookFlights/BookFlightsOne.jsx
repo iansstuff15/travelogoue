@@ -9,7 +9,7 @@ import '../BookDestination/BookDestination.css';
 
 
 const BookFlightsOne = () => {
-    history = useHistory();
+    const history = useHistory();
     const [step, setStep] = useState(1);
     const [tolocation, setTolocation] = useState("");
     const [fromlocation, setFromlocation] = useState("");
