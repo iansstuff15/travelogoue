@@ -12,10 +12,9 @@ $fname = $_POST['first_name'];
 $lname = $_POST['last_name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$contact_num=$_POST['contact_num'];
 
 $stmt = $db->prepare("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)");
-$result = $stmt->execute([$fname, $lname, $email, $password, $contact_num]);
+$result = $stmt->execute([$fname, $lname, $email, $password]);
 
 if($result){
     echo json_encode([
