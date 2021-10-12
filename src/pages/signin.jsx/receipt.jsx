@@ -19,7 +19,7 @@ function getreceipt(){
   const arrreceipt=JSON.parse(localStorage.getItem('receipt'))
   return arrreceipt
 }
-class SignIn extends Component {
+class receipt extends Component {
  
     constructor(props){
         super(props);
@@ -51,6 +51,26 @@ class SignIn extends Component {
     window.location.reload();
       }
 
+      del(e){
+        e.preventDefault();
+        const arr=JSON.parse(localStorage.getItem('user'))
+        const emailloc=arr['email']
+        const obj ={
+          email:emailloc,
+        };
+        Axios.post('delete.php',obj)
+      .then(res=> {this.state.data=res.data
+        
+      }
+      )
+      .catch(error => {
+        console.log(error.response)
+    });
+    localStorage.removeItem('receipt')
+    window.location.reload();
+    
+      }
+
     
 render(){
 return(
@@ -58,10 +78,15 @@ return(
     <div className="content">
         <Title title="RECEIPT" subtitle="Click Button For Receipt"/>    
         <form className="form" onSubmit={this.submitForm}> 
-        <CustomButton Type = "submit" Text = "RECEIPT"/>
+        <CustomButton Type = "submit" Text = "RECEIPT" />
         </form>
+        
     {localStorage.getItem('receipt')
     &&
+    <div>
+      <form className="form" onSubmit={this.del}> 
+        <CustomButton Type = "submit" Text = "CANCEL" />
+        </form>
     <table>
           <thead>
             <tr>
@@ -100,6 +125,7 @@ return(
             
           </tbody>
         </table>
+      </div>
     }
     </div>
 );
@@ -107,4 +133,4 @@ return(
 }
 
 
-export default SignIn
+export default receipt
