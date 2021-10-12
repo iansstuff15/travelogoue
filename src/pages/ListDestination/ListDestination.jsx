@@ -1,34 +1,51 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 
 import './ListDestination.css';
 import Title from '../../components/title/title';
 import '../../components/customButton/customButton';
 import ResortList from '../../components/listComponent/listComponent';
-import sResortpic from '../../assets/spanish_resort.jpeg';
-import bVillapic from '../../assets/britain_villa.jpeg';
-import jSpapic from '../../assets/japan_spa.jpeg';
-import buildPic from '../../assets/Building.png'
+
 const ListDestination = () => {
     const location = useLocation();
     const searchLocationdata = location.state.tolocation;
-    const searchLocation = () =>{
-        switch(searchLocationdata){
-            case 'Philippines': return <ResortList url = {buildPic} alt = {buildPic} name = "Manila Hotel" country = "Philippines" price = "$400" original_price ="$800"/>
-            case 'Spain': return <ResortList url = {sResortpic} alt = {sResortpic} name = "Spanish Resort" country = "Spain" price = "$500" original_price ="$1000"/>
-            case 'UAE': return <ResortList url = {bVillapic} alt = {bVillapic} name = "Britain Villia" country = "UAE" price = "$800" original_price ="$1200"/>
-            case 'Japan': return <ResortList url = {jSpapic} alt = {jSpapic} name = "Japan Spa" country = "Japan" price = "$500" original_price ="$900"/>
-            default:
-                return(
-                    <>
-                    <ResortList url = {buildPic} alt = {buildPic} name = "Manila Hotel" country = "Philippines" price = "$400" original_price ="$800"/>
-                    <ResortList url = {sResortpic} alt = {sResortpic} name = "Spanish Resort" country = "Spain" price = "$500" original_price ="$1000"/>
-                    <ResortList url = {bVillapic} alt = {bVillapic} name = "Britain Villia" country = "UAE" price = "$800" original_price ="$1200"/>
-                    <ResortList url = {jSpapic} alt = {jSpapic} name = "Japan Spa" country = "Japan" price = "$500" original_price ="$900"/>
-                    </>
-                )
-        }
+    const [listResorts, setResorts] = useState([]);
+    useEffect(() =>{
+        fetch('http://localhost:3001/Resort', {
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }
+      
+          })
+        .then(res => res.json())
+        .then(data=>{
+            setResorts(data);
+          
+        })
+    }, [])
+
+    useEffect(()=>{
+        setResorts(listResorts)
+        console.log(listResorts)
+
+    }, [listResorts])
+
+    const retrieveList = () => {
+        let number = 0;
+        listResorts.map(resort=>{if(searchLocationdata===resort.country){return number=1}})
+        return(
+            
+                listResorts.map(resort => {
+                if(number===1) return searchLocationdata===resort.country ? <ResortList key = {resort.id} url = {resort.url} alt = {resort.url} name = {resort.name} country = {resort.country} price = {resort.price} original_price = {resort.original_price}/> : null;
+                if(number===0) return <ResortList key = {resort.id} url = {resort.url} alt = {resort.url} name = {resort.name} country = {resort.country} price = {resort.price} original_price = {resort.original_price}/>
+                
+                })
+            
+        )
+        
     }
+    
     return(
         <>
         <div className="viewport">
@@ -43,7 +60,7 @@ const ListDestination = () => {
                 </div>
 
                 <div className ="listResort">
-                    {searchLocation()}
+                    {retrieveList()}
                 </div>
             </div>
         </div>

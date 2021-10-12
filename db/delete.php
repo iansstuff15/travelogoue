@@ -1,10 +1,16 @@
 <?php
 header('Content-Type: application/json');
-include "db.php";
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+if($_SERVER["REQUEST_METHOD"] == "OPTIONS") exit();
+$rest_json = file_get_contents("php://input");
+$_POST = json_decode($rest_json, true);
+include("db.php");
 
-$id = (int) $_POST['id'];
-$stmt = $db->prepare("DELETE FROM students WHERE id = ?");
-$result = $stmt->execute([$id]);
+$email = $_POST['email'];
+$stmt = $db->prepare("DELETE FROM receipt WHERE email = ?");
+$result = $stmt->execute([$email]);
 
 if($result){
     echo json_encode([

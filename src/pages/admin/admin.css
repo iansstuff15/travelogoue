@@ -1,0 +1,10 @@
+.admin-header{
+    margin-top: 60px;
+    background-color: #FF6600;
+    text-align: right;
+    padding: 10px;
+}
+
+.buttons-container{
+    display: inline-block;
+}

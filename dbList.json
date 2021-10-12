@@ -1,0 +1,40 @@
+{
+    "Resort":[
+        {   
+            "id": 1,
+            "url": "https://www.dominguezmarketing.net/wp-content/uploads/2016/03/manila-hotel.jpg",
+            "name": "Manila Hotel",
+            "country": "Philippines",
+            "price": "$400",
+            "original_price": "$800"
+
+        },
+        {        
+            "id": 2,
+            "url": "https://hips.hearstapps.com/edc.h-cdn.co/assets/16/17/1461865687-princehouse-exterior.jpg",
+            "name": "Spanish Resort",
+            "country": "Spain",
+            "price": "$500",
+            "original_price": "$1000"
+
+        },
+        {   
+            "id": 3,
+            "url": "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/GNM_-_R%C3%B6mische_Villa.jpg/800px-GNM_-_R%C3%B6mische_Villa.jpg",
+            "name": "Britain Villa",
+            "country": "UAE",
+            "price": "$800",
+            "original_price": "$1200"
+
+        },        
+        {   
+            "id": 4,
+            "url": "https://cdn-japantimes.com/wp-content/uploads/2013/01/fs20081216a3x.jpg",
+            "name": "Japan Spa",
+            "country": "Japan",
+            "price": "$500",
+            "original_price": "$900"
+
+        }
+    ]
+}

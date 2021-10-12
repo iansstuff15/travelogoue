@@ -16,7 +16,8 @@ const BookingDestination = () => {
     const [tolocation, setTolocation] = useState("");
     const [fromlocation, setFromlocation] = useState("");
     const [oneway, setOneway] = useState("");
-    const [whengo, setWhengo] = useState("");
+    const [whengodate, setWhengodate] = useState("");
+    const [whengotime, setWhengotime] = useState("");
     const [who, setWho] = useState("");
     const [yesspecial, setYesspecial] = useState("");
     const [howmany, setHowmany] = useState(0);
@@ -36,6 +37,8 @@ const BookingDestination = () => {
         e.preventDefault();
         setStep(1);
         history.push('/list', {tolocation})
+        localStorage.setItem('rp1', JSON.stringify({tolocation,fromlocation,who,whengodate,whengotime}))
+        console.log(JSON.parse(localStorage.getItem('rp1')))
 
     }
 
@@ -56,7 +59,8 @@ const BookingDestination = () => {
                             <p style={{fontSize: "24px",marginTop: "25px"}}>What schedule do you</p>
                             <p style={{fontSize: "72px" , marginBottom: "20px"}}>Wanna prefer?</p>
                             <TextF dvalue = {oneway} dvaluef = {setOneway} style = {{marginRight: "10px"}}  name = "Is it a one way trip?"/>
-                            <TextF dvalue = {whengo} dvaluef = {setWhengo} name = "When are you going?"/>
+                            <TextF dvalue = {whengodate} dvaluef = {setWhengodate} name = "What date are you going?"/>
+                            <TextF dvalue = {whengotime} dvaluef = {setWhengotime} name = "What time are you going?"/>
                             <div style={{marginTop: "20px", marginLeft: "450px"}}>
                                 <CustomButton Type = "button" Text = "Continue" gonextStep = {gonextStep}/>
                             </div>

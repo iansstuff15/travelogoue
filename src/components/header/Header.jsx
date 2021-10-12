@@ -27,8 +27,6 @@ function Header(){
     function signin() {
       history.push("/signin");
     }
-
-    
     function signup() {
         history.push("/signup");
       }
@@ -36,11 +34,6 @@ function Header(){
         history.push("/receipt");
     }
       return(
-
-
-
-
-        
     <div className="Header">
         <Link to="/">
         <img src = {logo} alt="logo" className="applogo"/>
@@ -48,15 +41,18 @@ function Header(){
        
         <Navigation name = "Destinations" link = "/destinations"/>
         <Navigation name = "Deals" link = "/deals"/>
-        
+        <Navigation name = "Manage Bookings" link = "/bookings" />
         {!localStorage.getItem('user')
         &&
-        <span>
+        <div>
       
       <Button
       sx={{
-         
+         bgcolor: 'grey.200',
           color: 'black',
+        position: 'absolute',
+        top: 27,
+        right: '29%',
       }}
         aria-controls="basic-menu"
         aria-haspopup="true"
@@ -76,7 +72,7 @@ function Header(){
         <MenuItem onClick={signin}>Sign In</MenuItem>
         <MenuItem onClick={signup}>Sign Up</MenuItem>
       </Menu>
-    </span>
+    </div>
 }
 {localStorage.getItem('user')
         &&
@@ -84,13 +80,11 @@ function Header(){
       
       <Button
        sx={{
-        fontFamily: 'Open Sans', 
-        textDecoration: "none",
-        fontWeight:"bold",
-        margin: "0px",
+        bgcolor: 'grey.200',
          color: 'black',
-         marginRight:'10%',
-     
+       position: 'absolute',
+       top: 27,
+       right: '29%',
      }}
         aria-controls="basic-menu"
         aria-haspopup="true"

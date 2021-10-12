@@ -15,34 +15,40 @@ import SignUp from './pages/signup/signup';
 import SignIn from './pages/signin.jsx/signin';
 import Booking from './pages/BookDestination/BookDestination';
 import BookFlightsOne from './pages/BookFlights/BookFlightsOne';
-import Admin from './pages/admin/admin';
-
+import BookHotel from './pages/BookHotel/BookHotel';
 import Flights from './pages/Flights/flights';
+import List from './pages/ListDestination/ListDestination';
 import receipt from './pages/signin.jsx/receipt';
+import Admin from './pages/admin/admin';
+import AdminCountries from './pages/admin-countries/admin-countries';
+import AdminPrice from './pages/admin-price/admin-price';
+import AdminNames from './pages/admin-names/admin-names';
 class App extends React.Component{
     render() {
       return (
         <div className="viewport">
-             <Router>
-       <Header />
+        <Router>
+         <Header />
+
 
           <Switch>
-              <Route path = "/" exact>
-                  <Home/>
-              </Route>
+              <Route path = "/" component = {Home} exact />
               <Route path = "/signup" component = {SignUp} exact/>
               <Route path = "/admin" component = {Admin} exact/>
+              <Route path = "/admin-countries" component = {AdminCountries} exact/>
+              <Route path = "/admin-price" component = {AdminPrice} exact/>
+              <Route path = "/admin-names" component = {AdminNames} exact/>
               <Route path = "/receipt" component = {receipt} exact/>
               <Route path = "/signin" component = {SignIn} exact/>
               <Route path = "/flights" component = {Flights} exact/>
               <Route path = "/bookings" component = {Booking} exact/>
-              <form>
+              <Route path = "/list" component = {List} exact/>
               <Route path = "/book-flights-page-one" component = {BookFlightsOne} exact/>
-          
-              </form>  
-              
+              <Route path = "/holiday" component = {BookHotel} exact/>
+
+             
           </Switch>
-        <Footer/>
+          <Footer/>
         </Router>
         </div>
        

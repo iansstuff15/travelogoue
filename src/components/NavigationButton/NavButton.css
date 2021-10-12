@@ -19,7 +19,7 @@
     padding: 20px;
     justify-content: flex-end;
     margin-right: 40px;
-
+    display: inline-block;
 }
 
 .logo{
