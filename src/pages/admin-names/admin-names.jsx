@@ -23,31 +23,22 @@ const AdminNames = () => (
         <div className="function-container">
         <div className="functions"> 
             <form>
-            <h1>ADD DATA</h1>
-            <input type ="text" className="input" placeholder="enter data here"/>
-            <input type ="submit" className="submit"/>
-            </form>
-        </div>
-        <div className="functions"> 
-            <form>
-            <h1>DELETE DATA</h1>
-            <input type ="text" className="input" placeholder="enter data here"/>
-            <input type ="submit" className="submit"/>
-            </form>
-        </div>
-        <div className="functions"> 
-            <form>
-            <h1>UPDATE DATA</h1>
-            <input type ="text" className="input" placeholder="enter data here"/>
-            <label>TO</label>
-            <input type ="text" className="input" placeholder="enter data here"/>
-            <input type ="submit" className="submit"/>
+            <h1>ENTER DATA DATA</h1>
+            <input type ="text" className="input" placeholder="ID data here"/>
+            <input type ="text" className="input" placeholder="Name data here"/>
+            <input type ="text" className="input" placeholder="Country data here"/>
+            <input type ="text" className="input" placeholder="URL data here"/>
+            <input type ="text" className="input" placeholder="Price data here"/>
+            <input type ="text" className="input" placeholder="Original price data here"/>
+            <div>
+            <input type ="submit" className="submit" value="ADD"/>
+            <input type ="submit" className="submit" value="UPDATE"/>
+
+            <button className="show-all">SHOW ALL</button>
+            </div>
             </form>
         </div>
 
-        <div className="functions">
-            <button className="show-all">SHOW ALL</button>
-        </div>
         </div>
     </> 
 )
