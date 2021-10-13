@@ -26,7 +26,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 if($result){
-    setResponseCode(200);
+    setResponseCode(201);
     echo json_encode($result);
 } else{
     setResponseCode(404);
