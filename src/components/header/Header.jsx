@@ -41,7 +41,8 @@ function Header(){
        
         <Navigation name = "Destinations" link = "/destinations"/>
         <Navigation name = "Deals" link = "/deals"/>
-        <Navigation name = "Manage Bookings" link = "/bookings" />
+        {!localStorage.getItem('receipt')&&<Navigation name = "Manage Bookings" link = "/bookings" />}
+        {localStorage.getItem('receipt')&&<Navigation name = "Manage Bookings" link = "/update" />}
         {!localStorage.getItem('user')
         &&
         <div>
