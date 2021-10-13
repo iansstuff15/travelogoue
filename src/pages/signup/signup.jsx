@@ -55,7 +55,7 @@ class signup extends Component {
         email:this.state.email,
         password:this.state.password,
       };
-      axios.post('http://localhost/db/createuser.php',obj)
+      axios.post('http://localhost/travelogue/createuser.php',obj)
     .then(res=> console.log(res.data))
     .catch(error => {
       console.log(error.response)
