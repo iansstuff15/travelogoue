@@ -13,7 +13,7 @@ import CustomButton from '../../components/customButton/customButton';
 import { borderRadius } from '@mui/system';
 import { render } from '@testing-library/react';
 const Axios = axios.create({
-    baseURL: 'http://localhost/db/',
+    baseURL: 'http://localhost/travelogue/',
 });
 function getreceipt(){
   const arrreceipt=JSON.parse(localStorage.getItem('receipt'))
