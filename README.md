@@ -1,5 +1,7 @@
 # INSTRUCTIONS (IMPORTANT)
 
+NOTE: Don't forget to do npm install or npm audit fix to get the node modules
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## `Step 1`
