@@ -48,7 +48,29 @@ const BookHotel = () => {
     }, [axios, title])
 
     const updateloc=()=>{
+        if(localStorage.getItem('receipt')){
         const receipt={ 
+         flight_num:Math.floor(Math.random() * 999), 
+         passenger_name : JSON.parse(localStorage.getItem("rp1"))['who'],
+         fr_location : JSON.parse(localStorage.getItem("rp1"))['fromlocation'],
+         to_location : JSON.parse(localStorage.getItem("rp1"))['tolocation'],
+         classtype:Math.floor(Math.random() * 3),
+         flight_date : JSON.parse(localStorage.getItem("rp1"))['whengodate'],
+         flight_time : JSON.parse(localStorage.getItem("rp1"))['whengotime'],
+         gate_num:Math.floor(Math.random() * 999),
+         board_time:"04:30:00",
+         resort_name:title,
+         email:JSON.parse(localStorage.getItem("user"))['email'],
+        }  
+    Axios.post('http://localhost/db/update.php',receipt)
+    .then(res=> console.log(res.data),
+    localStorage.removeItem('rp1'),
+       )
+    .catch(error => {
+      console.log(error.response)
+  });}
+  else{
+    const receipt={ 
         email:JSON.parse(localStorage.getItem("user"))['email'],
          flight_num:Math.floor(Math.random() * 999), 
          passenger_name : JSON.parse(localStorage.getItem("rp1"))['who'],
@@ -61,7 +83,7 @@ const BookHotel = () => {
          board_time:"04:30:00",
          resort_name:title,
          
-        }
+        }  
     Axios.post('http://localhost/db/createreceipt.php',receipt)
     .then(res=> console.log(res.data),
     localStorage.removeItem('rp1'),
@@ -69,9 +91,12 @@ const BookHotel = () => {
     .catch(error => {
       console.log(error.response)
   });
+
+  }
   history.push('/')   
 
     }
+
 
     return(
     <>
