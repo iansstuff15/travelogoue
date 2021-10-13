@@ -19,10 +19,7 @@ import BookHotel from './pages/BookHotel/BookHotel';
 import Flights from './pages/Flights/flights';
 import List from './pages/ListDestination/ListDestination';
 import receipt from './pages/signin.jsx/receipt';
-import update from './pages/signin.jsx/update';
 import Admin from './pages/admin/admin';
-import AdminCountries from './pages/admin-countries/admin-countries';
-import AdminPrice from './pages/admin-price/admin-price';
 import AdminNames from './pages/admin-names/admin-names';
 class App extends React.Component{
     render() {
@@ -36,11 +33,8 @@ class App extends React.Component{
               <Route path = "/" component = {Home} exact />
               <Route path = "/signup" component = {SignUp} exact/>
               <Route path = "/admin" component = {Admin} exact/>
-              <Route path = "/admin-countries" component = {AdminCountries} exact/>
-              <Route path = "/admin-price" component = {AdminPrice} exact/>
               <Route path = "/admin-names" component = {AdminNames} exact/>
               <Route path = "/receipt" component = {receipt} exact/>
-              <Route path = "/update" component = {update} exact />
               <Route path = "/signin" component = {SignIn} exact/>
               <Route path = "/flights" component = {Flights} exact/>
               <Route path = "/bookings" component = {Booking} exact/>
