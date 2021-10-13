@@ -1,24 +1,33 @@
-import React from 'react';
-
-import Navigation from '../../components/Navigation/Navigation';
-import NavButton from '../../components/NavigationButton/NavButton';
+import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import Title from '../../components/title/title';
 import './admin.css'
 
-const Admin = () => (
-    <>
-      
-        <div className="content">
-       
+const Admin = () => {
+    const history = useHistory();
+    const [login, setLogin] = useState();
+    const [password, setPassword] = useState();
+    onsubmit = () =>
+    {
+        if(login === "hello" && password === "world"){
+            history.push('/admin-names');
+        }
 
-         <Title title="WELCOME" subtitle="ADMIN!"/>
-         <span className="buttons-container">
-        <NavButton name= "NAVIGATE TO" subname="NAMES" link= "./admin-names" url= "https://cdn-icons-png.flaticon.com/512/1828/1828486.png" alt="names logo"/>
-        <NavButton name= "NAVIGATE TO" subname="PRICE" link= "./admin-price" url= "https://cdn-icons-png.flaticon.com/512/1/1437.png" alt="price logo"/>
-        <NavButton name= "NAVIGATE TO" subname="COUNTRIES" link= "./admin-countries" url= "https://cdn-icons-png.flaticon.com/512/2947/2947674.png" alt="countries logo"/>
-        </span>
-        </div>
-    </>
-)
+    }
+    return( 
+        <>
+        
+            <div className="content">
+        
+            <Title title="WELCOME" subtitle="ADMIN!"/>
+            <form onsubmit={onsubmit}>
+            <input id = "id" type ="text" className="input" placeholder="Login here" onChange={(e)=>setLogin(e.target.value)}/>
+            <input id = "name" type ="text" className="input" placeholder="Password here" onChange={(e)=>setPassword(e.target.value)}/>
+            <input type ="submit" className="submit" value="Login"/>
+            </form>
+            </div>
+        </>
+    )
+}
 
 export default Admin

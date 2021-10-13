@@ -8,6 +8,7 @@ import ResortList from '../../components/listComponent/listComponent';
 
 const ListDestination = () => {
     const location = useLocation();
+    const [number,setNumber] = useState(0);
     const searchLocationdata = location.state.tolocation;
     const [listResorts, setResorts] = useState([]);
     useEffect(() =>{
@@ -32,14 +33,14 @@ const ListDestination = () => {
     }, [listResorts])
 
     const retrieveList = () => {
-        let number = 0;
-        listResorts.map(resort=>{if(searchLocationdata===resort.country){return number=1}})
+
+        listResorts.map(resort=>(searchLocationdata===resort.country ?  setNumber(prev=>prev+1): null))
         return(
             
                 listResorts.map(resort => {
-                if(number===1) return searchLocationdata===resort.country ? <ResortList key = {resort.id} url = {resort.url} alt = {resort.url} name = {resort.name} country = {resort.country} price = {resort.price} original_price = {resort.original_price}/> : null;
+                if(number>1) return searchLocationdata===resort.country ? <ResortList key = {resort.id} url = {resort.url} alt = {resort.url} name = {resort.name} country = {resort.country} price = {resort.price} original_price = {resort.original_price}/> : null;
                 if(number===0) return <ResortList key = {resort.id} url = {resort.url} alt = {resort.url} name = {resort.name} country = {resort.country} price = {resort.price} original_price = {resort.original_price}/>
-                
+                return null;
                 })
             
         )
