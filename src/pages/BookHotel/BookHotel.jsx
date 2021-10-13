@@ -62,7 +62,7 @@ const BookHotel = () => {
          resort_name:title,
          email:JSON.parse(localStorage.getItem("user"))['email'],
         }  
-    Axios.post('http://localhost/db/update.php',receipt)
+    Axios.post('http://localhost/travelogue/update.php',receipt)
     .then(res=> console.log(res.data),
     localStorage.removeItem('rp1'),
        )
@@ -84,7 +84,7 @@ const BookHotel = () => {
          resort_name:title,
          
         }  
-    Axios.post('http://localhost/db/createreceipt.php',receipt)
+    Axios.post('http://localhost/travelogue/createreceipt.php',receipt)
     .then(res=> console.log(res.data),
     localStorage.removeItem('rp1'),
        )
